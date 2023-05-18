@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><br>RPG HELPER</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Character Sheet</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="diceContent">
+            <div id="showResult">
+                <h1>Roll the Dice!</h1>
+                <label>Your result was....<br></label>
+                <label id="result"></label>
+            </div>
+            <div id="dices">
+                <div id="amountOfDices">
+                    <input id="left" type="button" value="<<" onclick="math('sub')">
+                    <p id="numberOfDices"><br>1</p>
+                    <input type="button" value=">>" onclick="math('add')">
+
+                </div>
+
+                <div id="rollIt">
+                    <input id="left" type="button" value="d4" onclick="seeResult(4)">
+
+                    <input type="button" value="d6" onclick="seeResult(6)">
+                    <input type="button" value="d8" onclick="seeResult(8)">
+                    <br>
+                    <input id="left" type="button" value="d10" onclick="seeResult(10)">
+                    <input type="button" value="d12" onclick="seeResult(12)">
+                    <input id="right" type="button" value="d20" onclick="seeResult(20)">
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+
+        <div>
+            <label>Choose the mode</label>
+
+            <input type="button" value="Dark mode" onclick="setMode('dark')">
+            <input type="button" value="Light mode" onclick="setMode('light')">
+        </div>
+
+    </main>
+
+    <footer>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
