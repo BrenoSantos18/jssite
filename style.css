@@ -13,19 +13,19 @@
 }
 
 body {
-    background-color: var(--color4);
+    background-image: linear-gradient(to bottom, var(--color4) 40%, var(--color3));
     width: 100%;
 }
 
 
 header {
     padding: 5px 0px 5px 30px;
-    background-image: linear-gradient(to bottom, rgb(10, 201, 10), darkgreen);
+    background-image: linear-gradient(to bottom, var(--color5) 40%, var(--color4));
 }
 
 nav {
-    background-color: darkgreen;
-    padding: 15px 5px 0px 5px;
+    background-color: var(--color4);
+    padding: 15px 5px 0px 20px;
 }
 nav li {
     display: inline-block;
@@ -40,15 +40,16 @@ nav a {
 }
 
 nav a:hover {
-    background-color: rgb(1, 77, 1);
+    background-color:var(--color3);
     padding: 5px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    border: 5px solid black;
     color: white;
 }
 
 main{
-    padding: 5px;
+    padding: 5px 20px 30px 20px;
 }
 
 div#diceContent {
@@ -67,6 +68,11 @@ div#showResult {
 
 }
 
+p#result {
+    padding-top: 50px;
+    font-size: 80px;
+}
+
 div#dices {
     display: flex;
     flex-direction: column;
@@ -79,7 +85,9 @@ div#dices input {
     height: 70px;
 }
 
-
+div#dices input:hover {
+    border: 5px solid white;
+}
 
 
 div#amountOfDices {
@@ -126,9 +134,9 @@ footer {
     background-color: black;
     color: white;
     bottom: 0;
-    position: absolute;
     width: 100%;
     text-align: center;
+    padding: 10px;
 }
 
 
@@ -146,4 +154,8 @@ div#social {
 div#social a {
     text-decoration: none;
     color: white;
+}
+
+div#social a:hover {
+    color: blueviolet;
 }

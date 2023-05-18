@@ -1,7 +1,4 @@
 
-
-
-
 var greetings = document.getElementById('welcome')
 var amount_of_dices = 1
 
@@ -9,15 +6,6 @@ var seeAmount = document.getElementById('numberOfDices')
 
 
 
-document.getElementById('txt1').onclick =  function(){
-        txt1.innerText = 'Clicou'
-    }
-document.getElementById('txt1').onmouseover = function(){
-    txt1.innerText = 'Entrou'
-}
-document.getElementById('txt1').onmouseout = function(){
-    txt1.innerText = 'Saiu'
-}
 
 function math (operator){
     if (operator == 'add'){
@@ -33,9 +21,11 @@ function math (operator){
 
 
 
+
 function seeResult(number){
     var numb = Math.floor(Math.random() * number + 1) * amount_of_dices
-    var result = document.querySelector('label#result')
+    var result = document.querySelector('p#result')
+    document.getElementById('diceRolled').innerHTML = `${amount_of_dices}d${number}`
     result.innerHTML = `${numb}!`
 }
 
