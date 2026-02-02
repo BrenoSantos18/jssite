@@ -7,15 +7,10 @@
     <title>RPG</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="light">
     <header>
-        <h1><br>RPG HELPER</h1>
+        <h1><br>RPG Dices</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#">Character Sheet</a></li>
-        </ul>
-    </nav>
 
     <main>
         <div id="diceContent">
@@ -28,49 +23,37 @@
             <div id="dices">
                 <div id="amountOfDices">
                     <input id="left" type="button" value="<<" onclick="math('sub')">
-                    <p id="numberOfDices"><br>1</p>
+                    <span id="numberOfDices">1</span>
                     <input type="button" value=">>" onclick="math('add')">
                 </div>
 
                 <div id="rollIt">
-                    <input class="diceBtn"  id="left" type="button" value="d4" onclick="seeResult(4)">
-
-                    <input class="diceBtn"  type="button" value="d6" onclick="seeResult(6)">
-                    <input class="diceBtn"  type="button" value="d8" onclick="seeResult(8)">
-                    <br>
-                    <input class="diceBtn"  id="left" type="button" value="d10" onclick="seeResult(10)">
-                    <input class="diceBtn"  type="button" value="d12" onclick="seeResult(12)">
-                    <input class="diceBtn"  id="right" type="button" value="d20" onclick="seeResult(20)">
+                    <div>
+                        <input class="diceBtn" id="left" type="button" value="d4" onclick="seeResult(4)">
+                        <input class="diceBtn" type="button" value="d6" onclick="seeResult(6)">
+                        <input class="diceBtn" type="button" value="d8" onclick="seeResult(8)">
+                        <input class="diceBtn" id="left" type="button" value="d10" onclick="seeResult(10)">
+                        <input class="diceBtn" type="button" value="d12" onclick="seeResult(12)">
+                        <input class="diceBtn" id="right" type="button" value="d20" onclick="seeResult(20)">
+                        <input class="diceBtn" id="right" type="button" value="d100" onclick="seeResult(100)">
+                    </div>
                 </div>
 
             </div>
         </div>
-        <!--
+        
         <div>
-            <label>Choose the mode</label>
+            <h3>Choose the mode</h3>
 
-            <input type="button" value="Dark mode" onclick="setMode('dark')">
-            <input type="button" value="Light mode" onclick="setMode('light')">
+            <label for="light">Light Mode</label>
+            <input type="radio" name="mode" value="light" id="light">
+
+            <br>
+
+            <label for="dark">Dark Mode</label>
+            <input type="radio" name="mode" value="dark"  id="dark">
         </div>
-        -->
-
     </main>
-
-    <footer>
-        <p><br>Site em desenvolvimento por Breno Otavio dos Santos.</p>
-
-        <div id="infos">
-            <div id="social">
-                <small>
-                    <h2>Redes Sociais</h2>
-                </small>
-                <small><a href="https://www.linkedin.com/in/breno-dos-santos-215430275/" target="_blank">Linkedin</a></small>
-                <small><a href="https://github.com/BrenoSantos18" target="_blank">GitHub</a></small>
-            </div>
-        </div>
-
-
-    </footer>
 
     <script src="index.js"></script>
 </body>

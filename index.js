@@ -1,11 +1,27 @@
 
 var greetings = document.getElementById('welcome')
 var amount_of_dices = 1
-
 var seeAmount = document.getElementById('numberOfDices')
 
+function setMode(value) {
+  const radios = document.querySelectorAll(`input[name="mode"]`);
 
+  radios.forEach(radio => {
+    radio.checked = radio.value === value;
+  });
 
+  document.body.classList.remove('light', 'dark');
+  document.body.classList.add(value);
+}
+const radios = document.querySelectorAll('input[name="mode"]');
+
+radios.forEach(radio => {
+  radio.addEventListener('change', (event) => {
+    setMode(event.target.value)
+  });
+});
+
+setMode('light')
 
 function math (operator){
     if (operator == 'add'){
@@ -14,31 +30,19 @@ function math (operator){
     else if (operator == 'sub' && amount_of_dices > 1){
         amount_of_dices -= 1
     }
-    seeAmount.innerHTML = `<br>${amount_of_dices}`
+    seeAmount.innerHTML = `${amount_of_dices}`
 
 }
-
-
-
-
 
 function seeResult(number){
-    var numb = Math.floor(Math.random() * number + 1) * amount_of_dices
+    var total = 0
+    for (var i = 0; i < amount_of_dices; i++) {
+        total += Math.floor((Math.random() * number) + 1)
+    }
+
     var result = document.querySelector('p#result')
     document.getElementById('diceRolled').innerHTML = `${amount_of_dices}d${number}`
-    result.innerHTML = `${numb}!`
-}
-
-function setMode(type){
-    if (type == 'dark'){
-        document.body.style.backgroundColor = '#591902'
-        document.body.style.color = 'white'
-    }
-    else if (type == 'light'){
-        document.body.style.backgroundColor = 'white'
-        document.body.style.color = 'black'
-    }
-
+    result.innerHTML = `${total}!`
 }
 
 

@@ -1,159 +1,184 @@
-
+/* Reset básico */
 * {
-    margin: 0px;
-    padding: 0px;
-}
-
-:root {
-    --color1: #F2D649;
-    --color2: #F2AB27;
-    --color3: #BF6211;
-    --color4: #591902;
-    --color5: #D9320D;
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', serif;
 }
 
 body {
-    background-image: linear-gradient(to bottom, var(--color4) 40%, var(--color3));
-    width: 100%;
+  margin: 0;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* ======================
+   LIGHT MODE — Pergaminho
+====================== */
+body.light {
+  background: #f4e8d2;
+  color: #3b2f1c;
+}
 
+/* ======================
+   DARK MODE — Grimório
+====================== */
+body.dark {
+  background: #141414;
+  color: #e5d9c5;
+}
+
+/* ======================
+   HEADER
+====================== */
 header {
-    padding: 5px 0px 5px 30px;
-    background-image: linear-gradient(to bottom, var(--color5) 40%, var(--color4));
+  text-align: center;
+  padding: 20px;
+  border-bottom: 3px solid #8b6b3f;
+  background: linear-gradient(to right, #3b2f1c, #6a4e2f);
+  color: #f5e6c8;
+  letter-spacing: 3px;
+  text-shadow: 0 0 6px black;
 }
 
-nav {
-    background-color: var(--color4);
-    padding: 15px 5px 0px 20px;
-}
-nav li {
-    display: inline-block;
-    padding: 5px;
+
+/* ======================
+   MAIN CONTENT
+====================== */
+main {
+  padding: 20px;
+  display: grid;
+  gap: 20px;
 }
 
-nav a {
-    text-decoration: none;
-    color: white;
+/* ======================
+   DICE PANEL
+====================== */
+#diceContent {
+  background: rgba(0,0,0,0.05);
+  border: 2px solid #8b6b3f;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+/* Result Box */
+#showResult {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+body.dark #result {
+    color: gold;
+    text-shadow: 0 0 10px rgba(255,215,0,0.6);
+}
+body.light #result {
+  color: #8b5a2b; /* bronze / marrom dourado */
+  text-shadow: 0 0 6px rgba(139, 90, 43, 0.35);
+}
+
+
+#result {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* ======================
+   DICE BUTTONS
+====================== */
+
+#rollIt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#rollIt > div {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.diceBtn {
+    min-width: 80px;
+
+    padding: 12px 18px;
+    margin: 6px;
+    border-radius: 10px;
+    border: 2px solid #8b6b3f;
+    background: linear-gradient(#6a4e2f, #3b2f1c);
+    color: #f5e6c8;
     font-weight: bold;
-    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.08s ease, box-shadow 0.2s ease;
 }
 
-nav a:hover {
-    background-color:var(--color3);
-    padding: 5px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border: 5px solid black;
-    color: white;
+.diceBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px gold;
 }
 
-main{
-    padding: 5px 20px 30px 20px;
+.diceBtn:active {
+  transform: scale(0.95);
 }
 
-div#diceContent {
-    display: flex;
+/* ======================
+   DICE COUNTER
+====================== */
+#amountOfDices {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 1.3rem;
 }
 
-div#showResult {
-    background-image: linear-gradient(to bottom, var(--color3), var(--color2));
-    text-align: center;
-    width: 50%;
-    min-height: 400px;
-    color: black;
-    padding: 5px;
-    border: 10px solid black;
-    margin: -5px 0px 0px -5px;
-
+#amountOfDices input {
+  padding: 6px 12px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 2px solid #8b6b3f;
+  background: #3b2f1c;
+  color: #f5e6c8;
 }
 
-p#result {
-    padding-top: 50px;
-    font-size: 80px;
+#numberOfDices {
+    font-size: 2em;
 }
 
-div#dices {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 100%;
+/* ======================
+   MODE SWITCH PANEL
+====================== */
+main > div:last-child {
+  border: 2px solid #8b6b3f;
+  padding: 15px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.06);
 }
 
-div#dices input {
-    width: 70px;
-    height: 70px;
+h3 {
+  text-align: center;
+  letter-spacing: 1px;
 }
 
-div#dices input:hover {
-    border: 5px solid white;
+/* Radios RPG Style */
+input[type="radio"] {
+  accent-color: gold;
+  transform: scale(1.2);
+  margin-left: 6px;
+  cursor: pointer;
 }
 
-
-div#amountOfDices {
-    display: flex;
-    width: 50%;
-    margin: auto;
-    margin-bottom: 30px;
+label {
+  cursor: pointer;
+  font-weight: bold;
 }
 
-div#amountOfDices input {
-    height: 25px;
-    width: 25px;
-    margin: 25px 10px 10px 10px;
-}
-
-div#amountOfDices p {
-    text-align: center;
-    font-size: 40px;
-    background-color: white;
-    width: 100px;
-    color: black;
-    line-height: 15px;
-    border: 5px solid black;
+/* ======================
+   DARK MODE OVERRIDES
+====================== */
+body.dark header {
+  background: linear-gradient(to right, #000, #222);
+  border-bottom-color: #aa8c5f;
 }
 
 
-div#rollIt {
-    padding: 0px 0px 0px 5px;
-    width: 50%;
-    margin: auto;
-}
-
-div#rollIt input {
-    margin-bottom: 25px;
-    border-radius: 50%;
-    height: 70px;
-    width: 70px;
-    background-color: black;
-    color: white;
-}
-
-
-footer {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-
-div#infos {
-    display: flex;
-}
-
-div#social {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    line-height: 30px;
-}
-
-div#social a {
-    text-decoration: none;
-    color: white;
-}
-
-div#social a:hover {
-    color: blueviolet;
+body.dark #diceContent {
+  background: rgba(255,255,255,0.05);
 }
