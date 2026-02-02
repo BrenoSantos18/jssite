@@ -1,2 +1,1 @@
-# jssite
-My first devoleped site using java script language. It's a simple dice roll generator.
+A roll-dicer website, from the time I was learning the basics of JavaScript.
